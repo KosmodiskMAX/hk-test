@@ -23,7 +23,7 @@ $route = new Route();
 $route->add('/');
 $route->add('/about', 'About');
 $route->add('/contact', function() {
-  echo 'KONJ';
+  echo 'Contact';
 });
 
 // echo '<pre>';
