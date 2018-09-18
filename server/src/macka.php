@@ -1,15 +1,15 @@
  <?php
 
-class Photo extends Db_object{
+class Macka extends Db_object{
     
-    protected static $db_table = "photos";
-    protected static $db_table_fields = array('id', 'user_id', 'title', 'caption', 'description', 'filename', 'alternate_text', 'type', 'size');
+    protected static $db_table = "macke";
+    protected static $db_table_fields = array('id', 'user_id', 'ime', 'prezime', 'image', 'date');
     public $id;
     public $user_id;
-    public $title;
-    public $caption;
-    public $description;
-    public $alternate_text;
+    public $ime;
+    public $prezime;
+    public $image;
+    public $date;
 
         
     
@@ -37,7 +37,7 @@ class Photo extends Db_object{
                     return true;
                 }
             }else{
-                $this->errors[] = "File directory probably dosent have rifht premissions";
+                $this->errors[] = "File directory probably dosent have right premissions";
                 return false;
             }
             

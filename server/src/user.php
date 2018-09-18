@@ -3,13 +3,16 @@
     class User extends Db_object{ 
         
         protected static $db_table = "users";
-        protected static $db_table_fields = array('username', 'password', 'firstname', 'lastname', 'user_image');
+        protected static $db_table_fields = array('id', 'ime', 'prezime', 'username', 'password', 'role', 'image', 'date');
         public $id;
+        public $ime;
+        public $prezime;
         public $username;
         public $password;
-        public $firstname;
-        public $lastname;
-        public $user_image;
+        public $role;
+        public $image;
+        public $date;            
+                                      
         
         public $upload_directory = "images";
         public $image_placeholder = "https://via.placeholder.com/400x400&text=image";
@@ -30,7 +33,7 @@
             
             $result = self::find_by_query($sql);
             return !empty($result) ? array_shift($result) : false;
-        }
+        } //koristi se za login
         
         public function delete_user(){
         if($this->delete()){
